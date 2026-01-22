@@ -95,3 +95,9 @@ The notebook will:
 <br>
 
 After execution, all numerical results and figures used in the report and presentation will be available in the `outputs` folder.
+
+## Authors
+
+- [Mariana Pereira](https://github.com/mfaria-p)
+- [Carolina Dias]()
+- [Sofia Fernandes]()
