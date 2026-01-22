@@ -32,7 +32,7 @@ The project includes:
 ## Project Structure
 
 ```
-TPC2/
+CWLP_optimization/
 ├── README.md                     # Project documentation
 ├── assignment_code.ipynb          # Main notebook (data loading, model execution and evaluation)
 ├── Report.pdf                     # Final project report
