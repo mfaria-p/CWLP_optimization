@@ -98,13 +98,10 @@ CAP_LET_FOLDER = "data_let"
 **Execute the code**
 Run all cells sequentially from top to bottom. The notebook will:
 
-* Load and validate all CWLP instances from the folders you created.
+* Load and validate all CWLP instances.
 * Build and solve MIP and CP models.
-* Execute original and extended scenarios.
-* Save raw and aggregated results to the `outputs` folder.
-* Generate all runtime comparison plots automatically.
-
-After execution, all numerical results and figures used in the report will be available in the `outputs` folder.
+* Run both original and extended scenarios.
+* Generate and save all results (CSVs) and plots (PNGs) directly to the `outputs/` folder.
 
 ## Authors
 
