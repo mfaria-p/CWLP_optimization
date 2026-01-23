@@ -10,6 +10,7 @@
   <a href="#Project-Overview">Project Overview</a> •
   <a href="#Project-Structure">Project Structure</a> •
   <a href="#user-instructions">User Instructions</a> •
+  <a href="#authors">Authors</a>
 </p>
 
 <br>
@@ -38,7 +39,6 @@ CWLP_optimization/
 ├── README.md                      # Project documentation
 ├── assignment_code.ipynb          # Main notebook (data loading, model execution and evaluation)
 ├── Report.pdf                     # Final project report
-├── Presentation.pdf               # Project presentation slides
 ├── data_num/                      # Numeric CWLP instances (Sets IV-XIII)
 ├── data_let/                      # Letter-based CWLP instances (Sets A-C)
 └── outputs/                       # Experimental results and generated plots
