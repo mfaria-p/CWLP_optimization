@@ -28,8 +28,6 @@ The project includes:
 * Performance evaluations and visualizations
 * A written report and presentation summarizing methodology and findings
 
-<br>
-
 ## Project Structure
 
 The directory structure below illustrates the project layout. Note that the `data_` folders must be populated by the user (see [User Instructions](#user-instructions)).
