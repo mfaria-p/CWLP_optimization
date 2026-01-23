@@ -25,24 +25,23 @@ The project includes:
 * Benchmark CWLP instances in numeric and letter-based formats
 * Experimental results for original and extended scenarios
 * Performance evaluations and visualizations
-* A written report summarizing methodology and findings
+* A written report and presentation summarizing methodology and findings
 
 <br>
 
 ## Project Structure
 
-```
+The directory structure below illustrates the project layout. Note that the `data_` folders must be populated by the user (see [User Instructions](#user-instructions)).
+
+```text
 CWLP_optimization/
-├── README.md                     # Project documentation
+├── README.md                      # Project documentation
 ├── assignment_code.ipynb          # Main notebook (data loading, model execution and evaluation)
 ├── Report.pdf                     # Final project report
-├── data_num/                      # Numeric CWLP instances
-│   └── <instance files>
-├── data_let/                      # Letter-based CWLP instances
-│   ├── capa*
-│   ├── capb*
-│   └── capc*
-└── outputs/                       # Generated results and plots
+├── Presentation.pdf               # Project presentation slides
+├── data_num/                      # Numeric CWLP instances (Sets IV-XIII)
+├── data_let/                      # Letter-based CWLP instances (Sets A-C)
+└── outputs/                       # Experimental results and generated plots
     ├── compare_bestcp_vs_mip_original.csv
     ├── compare_bestcp_vs_mip_extended.csv
     ├── results_original_raw.csv
@@ -50,51 +49,62 @@ CWLP_optimization/
     ├── fig_runtime_cp_original.png
     ├── fig_runtime_cp_extended.png
     └── fig_runtime_mip_vs_dimension.png
+
 ```
-
-<br>
-
 
 ## User Instructions
 
-### Install Libraries
+### 1. Install Libraries
 
-This project requires the installation of the `docplex` library. If not previously installed, please remove the `#` as shown below to execute the installation command:
+This project requires the `docplex` library. If not previously installed, uncomment and run the installation cell in the notebook:
 
 ```python
 !pip install docplex
+
 ```
-<br>
 
-### How to Configure Data Paths
+### 2. Data Acquisition (Required)
 
-The data folders are defined at the beginning of `assignment_code.ipynb`:
+The project uses benchmark instances from the [OR-Library (Capacitated Warehouse Location)](https://people.brunel.ac.uk/~mastjjb/jeb/orlib/capinfo.html). You must download and organize them manually for the code to run.
+
+1. **Create Folders:**
+In the same directory as `assignment_code.ipynb`, create two folders:
+* `data_num/`
+* `data_let/`
+
+
+2. **Download Files:**
+Go to the [OR-Library Files](https://people.brunel.ac.uk/~mastjjb/jeb/orlib/files/) and download the following text files into the corresponding folders:
+* **Into `data_num/`** (Standard Numeric Sets IV–XIII):
+* Files: `cap41`–`cap44`, `cap51`, `cap61`–`cap64`, `cap71`–`cap74`, `cap81`–`cap84`, `cap91`–`cap94`, `cap101`–`cap104`, `cap111`–`cap114`, `cap121`–`cap124`, `cap131`–`cap134`.
+
+
+* **Into `data_let/`** (Large Letter Sets A–C):
+* Files: `capa`, `capb`, `capc`.
+* *Note: The notebook's parser automatically handles the specific format of these files.*
+
+### 3. How to Configure Data Paths
+
+The data folders are defined at the beginning of `assignment_code.ipynb`. If you named your folders differently in the previous step, update these variables in the code:
 
 ```python
 CAP_NUM_FOLDER = "data_num"
 CAP_LET_FOLDER = "data_let"
+
 ```
 
-Ensure these folders exist in the same directory as the notebook and contain the provided instances.
+### 4. How to Run
 
-<br>
+**Execute the code**
+Run all cells sequentially from top to bottom. The notebook will:
 
-### How to Run
+* Load and validate all CWLP instances from the folders you created.
+* Build and solve MIP and CP models.
+* Execute original and extended scenarios.
+* Save raw and aggregated results to the `outputs` folder.
+* Generate all runtime comparison plots automatically.
 
-#### Execute the code
-
-Run all cells sequentially from top to bottom.
-The notebook will:
-
-* Load and validate all CWLP instances
-* Build and solve MIP and CP models
-* Execute original and extended scenarios
-* Save raw and aggregated results to the `outputs` folder
-* Generate all runtime comparison plots automatically
-
-<br>
-
-After execution, all numerical results and figures used in the report and presentation will be available in the `outputs` folder.
+After execution, all numerical results and figures used in the report will be available in the `outputs` folder.
 
 ## Authors
 
